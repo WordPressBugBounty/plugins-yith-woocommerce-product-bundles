@@ -155,7 +155,7 @@ if ( ! class_exists( 'WC_Product_Yith_Bundle' ) ) {
 		 * @return string
 		 */
 		public function add_to_cart_text() {
-			$text = $this->is_purchasable() && $this->is_in_stock() && $this->all_items_in_stock() ? __( 'Add to cart', 'woocommerce' ) : __( 'Read more', 'woocommerce' );
+			$text = $this->is_purchasable() && $this->is_in_stock() && $this->all_items_in_stock() ? __( 'Add to cart', 'yith-woocommerce-product-bundles' ) : __( 'Read more', 'woocommerce' );
 
 			return apply_filters( 'woocommerce_product_add_to_cart_text', $text, $this );
 		}

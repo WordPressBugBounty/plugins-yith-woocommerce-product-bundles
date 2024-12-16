@@ -3,17 +3,17 @@
  * Plugin Name: YITH WooCommerce Product Bundles
  * Plugin URI: https://yithemes.com/themes/plugins/yith-woocommerce-product-bundles
  * Description: <code><strong>YITH WooCommerce Product Bundles</strong></code> allows you to bundle WooCommerce products and sell them at a unique price. You can also set the quantity for each bundled item! <a href="https://yithemes.com/" target="_blank">Get more plugins for your e-commerce shop on <strong>YITH</strong></a>
- * Version: 2.11.0
+ * Version: 2.12.0
  * Author: YITH
  * Author URI: https://yithemes.com/
  * Text Domain: yith-woocommerce-product-bundles
  * Domain Path: /languages/
- * WC requires at least: 9.1
- * WC tested up to: 9.3.x
+ * WC requires at least: 9.3
+ * WC tested up to: 9.5.x
  *
  * @author  YITH <plugins@yithemes.com>
  * @package YITH WooCommerce Product Bundles
- * @version 2.11.0
+ * @version 2.12.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -51,7 +51,7 @@ register_activation_hook( __FILE__, 'yith_plugin_registration_hook' );
 
 
 if ( ! defined( 'YITH_WCPB_VERSION' ) ) {
-	define( 'YITH_WCPB_VERSION', '2.11.0' );
+	define( 'YITH_WCPB_VERSION', '2.12.0' );
 }
 
 if ( ! defined( 'YITH_WCPB_FREE_INIT' ) ) {
@@ -111,7 +111,7 @@ if ( ! defined( 'YITH_WCPB_SLUG' ) ) {
  */
 function yith_wcpb_init() {
 
-	load_plugin_textdomain( 'yith-woocommerce-product-bundles', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	yith_plugin_fw_load_plugin_textdomain( 'yith-woocommerce-product-bundles', dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
 	require_once __DIR__ . '/includes/objects/class.yith-wc-product-bundle.php';
 	require_once __DIR__ . '/includes/objects/class.yith-wc-bundled-item.php';
@@ -145,8 +145,7 @@ function yith_wcpb_install() {
 
 add_action( 'plugins_loaded', 'yith_wcpb_install', 11 );
 
-/* Plugin Framework Version Check */
-if ( ! function_exists( 'yit_maybe_plugin_fw_loader' ) && file_exists( plugin_dir_path( __FILE__ ) . 'plugin-fw/init.php' ) ) {
+// Plugin Framework Loader.
+if ( file_exists( plugin_dir_path( __FILE__ ) . 'plugin-fw/init.php' ) ) {
 	require_once plugin_dir_path( __FILE__ ) . 'plugin-fw/init.php';
 }
-yit_maybe_plugin_fw_loader( plugin_dir_path( __FILE__ ) );

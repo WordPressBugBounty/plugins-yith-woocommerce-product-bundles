@@ -80,8 +80,6 @@ if ( ! class_exists( 'YITH_WCPB' ) ) {
 		 */
 		protected function __construct() {
 
-			add_action( 'plugins_loaded', array( $this, 'plugin_fw_loader' ), 15 );
-
 			if ( is_admin() ) {
 				$this->admin = yith_wcpb_admin();
 			}
@@ -107,24 +105,6 @@ if ( ! class_exists( 'YITH_WCPB' ) ) {
 			$types['yith_bundle'] = _x( 'Product Bundle', 'Admin: type of product', 'yith-woocommerce-product-bundles' );
 
 			return $types;
-		}
-
-
-		/**
-		 * Load Plugin Framework
-		 *
-		 * @return void
-		 * @since  1.0
-		 * @access public
-		 */
-		public function plugin_fw_loader() {
-			if ( ! defined( 'YIT_CORE_PLUGIN' ) ) {
-				global $plugin_fw_data;
-				if ( ! empty( $plugin_fw_data ) ) {
-					$plugin_fw_file = array_shift( $plugin_fw_data );
-					require_once $plugin_fw_file;
-				}
-			}
 		}
 
 		/**
