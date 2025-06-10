@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the YITH WooCommerce Product Bundles package.
 msgid ""
 msgstr ""
-"Project-Id-Version: YITH WooCommerce Product Bundles 2.15.0\n"
+"Project-Id-Version: YITH WooCommerce Product Bundles 2.16.0\n"
 "Report-Msgid-Bugs-To: Your Inspiration Themes <plugins@yithemes.com>\n"
-"POT-Creation-Date: 2025-03-31 09:55:13+00:00\n"
+"POT-Creation-Date: 2025-06-10 11:01:10+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -208,13 +208,13 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: init.php:31
+#: init.php:32
 msgid ""
 "YITH WooCommerce Product Bundles is enabled but not effective. It requires "
 "WooCommerce in order to work."
 msgstr ""
 
-#: init.php:42
+#: init.php:43
 msgid ""
 "You can't activate the free version of YITH WooCommerce Product Bundles "
 "while you are using the premium one."
