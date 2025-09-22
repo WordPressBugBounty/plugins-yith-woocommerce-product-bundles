@@ -4,7 +4,7 @@ Contributors: yithemes
 Tags: product, bundle, bundles, product bundle, product bundles, bundle product, woocommerce, products, themes, yit, e-commerce, shop, yith, premium, yithemes
 Requires at least: 6.6
 Tested up to: 6.8
-Stable tag: 2.18.0
+Stable tag: 2.19.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -45,6 +45,10 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 6. Admin view: Product bundle in the order
 
 == Changelog ==
+
+= 2.19.0 – Released on 22 September 2025 =
+
+* New: support for WooCommerce 10.2
 
 = 2.18.0 – Released on 25 August 2025 =
 
