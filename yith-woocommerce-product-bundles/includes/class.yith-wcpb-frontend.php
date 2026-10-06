@@ -422,7 +422,7 @@ if ( ! class_exists( 'YITH_WCPB_Frontend' ) ) {
 					$bundled_product_type = $bundled_item->product->get_type();
 
 					// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-					$bundled_product_quantity = isset( $_REQUEST[ apply_filters( 'woocommerce_product_yith_bundle_field_prefix', '', $product_id ) . 'yith_bundle_quantity_' . $bundled_item_id ] ) ? absint( $_REQUEST[ apply_filters( 'woocommerce_product_yith_bundle_field_prefix', '', $product_id ) . 'yith_bundle_quantity_' . $bundled_item_id ] ) : $bundled_item->get_quantity();
+					$bundled_product_quantity = $bundled_item->get_quantity();
 
 					$cartstamp[ $bundled_item_id ]['product_id'] = $id;
 					$cartstamp[ $bundled_item_id ]['type']       = $bundled_product_type;

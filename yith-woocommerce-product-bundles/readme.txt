@@ -4,7 +4,7 @@ Contributors: yithemes
 Tags: product, bundle, bundles, product bundle, product bundles, bundle product, woocommerce, products, themes, yit, e-commerce, shop, yith, premium, yithemes
 Requires at least: 6.9
 Tested up to: 7.1
-Stable tag: 2.29.0
+Stable tag: 2.30.0
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,8 +32,8 @@ YITH WooCommerce Product Bundles will add a new product type called "Product Bun
 
 == Frequently Asked Questions ==
 
-= How can I report security bugs? =
-You can report security bugs through the Patchstack Vulnerability Disclosure Program. The Patchstack team help validate, triage and handle any security vulnerabilities. [Report a security vulnerability.](https://patchstack.com/database/vdp/yith-woocommerce-product-bundles/)
+= Where do I report security bugs found in this plugin? =
+Please report security bugs found in the source code of the YITH WooCommerce Product Bundles plugin through the [Patchstack Vulnerability Disclosure  Program](https://patchstack.com/database/vdp/0bd6fda2-6b1b-4558-9000-87f2e93ac22e). The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this plugin.
 
 == Screenshots ==
 
@@ -45,6 +45,11 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 6. Admin view: Product bundle in the order
 
 == Changelog ==
+
+= 2.30.0 – Released on 05 October 2026 =
+
+* New: support for WooCommerce 11.2
+* Update: YITH plugin framework
 
 = 2.29.0 – Released on 02 September 2026 =
 
