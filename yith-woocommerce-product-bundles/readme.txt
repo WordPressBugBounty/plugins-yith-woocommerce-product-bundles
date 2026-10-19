@@ -4,7 +4,7 @@ Contributors: yithemes
 Tags: product, bundle, bundles, product bundle, product bundles, bundle product, woocommerce, products, themes, yit, e-commerce, shop, yith, premium, yithemes
 Requires at least: 6.9
 Tested up to: 7.1
-Stable tag: 2.30.0
+Stable tag: 2.30.1
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -45,6 +45,10 @@ Please report security bugs found in the source code of the YITH WooCommerce Pro
 6. Admin view: Product bundle in the order
 
 == Changelog ==
+
+= 2.30.1 – Released on 19 October 2026 =
+
+* Tweak: improved cart validation preventing bundled item manipulation
 
 = 2.30.0 – Released on 05 October 2026 =
 

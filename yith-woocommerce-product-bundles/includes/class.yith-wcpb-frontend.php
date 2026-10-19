@@ -62,6 +62,8 @@ if ( ! class_exists( 'YITH_WCPB_Frontend' ) ) {
 			add_filter( 'woocommerce_cart_item_quantity', array( $this, 'woocommerce_cart_item_quantity' ), 10, 2 );
 			add_action( 'woocommerce_after_cart_item_quantity_update', array( $this, 'update_cart_item_quantity' ), 1, 2 );
 			add_action( 'woocommerce_before_cart_item_quantity_zero', array( $this, 'update_cart_item_quantity' ), 1 );
+			add_filter( 'woocommerce_update_cart_validation', array( $this, 'bundled_item_cart_validation' ), 10, 3 );
+			add_filter( 'woocommerce_store_api_cart_item_quantity_validation', array( $this, 'bundled_item_cart_api_validation' ), 10, 4 );
 
 			add_filter( 'woocommerce_cart_item_price', array( $this, 'woocommerce_cart_item_price' ), 99, 3 );
 			add_filter( 'woocommerce_cart_item_subtotal', array( $this, 'bundles_item_subtotal' ), 99, 3 );
@@ -677,6 +679,42 @@ if ( ! class_exists( 'YITH_WCPB_Frontend' ) ) {
 			}
 
 			return $add_flag;
+		}
+
+		/**
+		 * Prevents bundled items from being manipulated in the cart
+		 * @param bool   $passed		Result of the validation
+		 * @param string $cart_item_key	Cart item key
+		 * @param array  $values		Cart item data
+		 * 
+		 * @return bool
+		 */
+		public function bundled_item_cart_validation( $passed, $cart_item_key, $values ){
+			if ( ! empty( $values['bundled_by'] ) ) {
+				wc_add_notice( __( 'This item is part of a bundle and cannot be modified.', 'yith-woocommerce-product-bundles' ), 'error' );
+				$passed = false;
+			}
+			return $passed;
+		}
+
+		/**
+		 * Render "add to cart" template for bundle products.
+		 * @param \WP_Error|true $valid		Result of the validation
+		 * @param int|float		 $quantity 	Cart item key
+		 * @param \WC_Product	 $product	Cart item data
+		 * @param array			 $cart_item	Cart item data
+		 * 
+		 * @return \WP_Error|true
+		 */
+		public function bundled_item_cart_api_validation( $valid, $quantity, $product, $cart_item ) {
+			if ( ! empty( $cart_item['bundled_by'] ) ) {
+				return new WP_Error(
+					'woocommerce_rest_cart_item_quantity_fixed',
+					__( 'This item is part of a bundle and cannot be modified.', 'yith-woocommerce-product-bundles' ),
+					array( 'status' => 400 )
+				);
+			}
+			return $valid;
 		}
 
 		/**
